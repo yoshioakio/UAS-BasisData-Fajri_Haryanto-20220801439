@@ -15,19 +15,17 @@ class Product extends Model
         'name',
         'slug',
         'price',
-        'status',
-        'category_id',
         'is_active',
-        'description',
+        'image'
     ];
-
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
 
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }
